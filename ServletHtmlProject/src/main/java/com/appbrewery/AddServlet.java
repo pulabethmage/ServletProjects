@@ -35,10 +35,18 @@ public void doGet(HttpServletRequest req,HttpServletResponse res) throws IOExcep
 		
 		int total = i+j;
 		
-		req.setAttribute("total", total);
+		//URL Rewriting
 		
-		RequestDispatcher rd = req.getRequestDispatcher("sq");
-		rd.forward(req, res);
+		res.sendRedirect("sq?total="+total);
+		
+		
+		
+		//Request Dispatcher technique
+		
+//		req.setAttribute("total", total);
+//		
+//		RequestDispatcher rd = req.getRequestDispatcher("sq");
+//		rd.forward(req, res);
 		
 //		pw.println("Total is :"+ total);
 
