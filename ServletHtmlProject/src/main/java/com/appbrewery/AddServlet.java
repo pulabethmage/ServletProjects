@@ -4,6 +4,7 @@ import java.io.IOError;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -25,7 +26,7 @@ public class AddServlet extends HttpServlet{
 
 	}
 	
-public void doGet(HttpServletRequest req,HttpServletResponse res) throws IOException {
+public void doGet(HttpServletRequest req,HttpServletResponse res) throws IOException, ServletException {
 		
 		PrintWriter pw = res.getWriter();
 		
@@ -34,7 +35,12 @@ public void doGet(HttpServletRequest req,HttpServletResponse res) throws IOExcep
 		
 		int total = i+j;
 		
-		pw.println("Total is :"+ total);
+		req.setAttribute("total", total);
+		
+		RequestDispatcher rd = req.getRequestDispatcher("sq");
+		rd.forward(req, res);
+		
+//		pw.println("Total is :"+ total);
 
 	}
 

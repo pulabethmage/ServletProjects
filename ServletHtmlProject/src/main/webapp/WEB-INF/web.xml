@@ -10,5 +10,15 @@
 		<servlet-name>abc</servlet-name>
 		<url-pattern>/add</url-pattern>
 		</servlet-mapping>
+		
+		<servlet>
+		<servlet-name>sqservlet</servlet-name>
+		<servlet-class>com.appbrewery.SqServlet</servlet-class>
+		</servlet>
+		
+		<servlet-mapping>
+		<servlet-name>sqservlet</servlet-name>
+		<url-pattern>/sq</url-pattern>
+		</servlet-mapping>
 	
 </web-app>
