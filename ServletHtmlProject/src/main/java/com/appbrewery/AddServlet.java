@@ -6,9 +6,11 @@ import java.io.PrintWriter;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 public class AddServlet extends HttpServlet{
 	
@@ -35,20 +37,25 @@ public void doGet(HttpServletRequest req,HttpServletResponse res) throws IOExcep
 		
 		int total = i+j;
 		
-		//URL Rewriting
+		////Cookies
+			Cookie cookie = new Cookie("total",total+ "");
+			res.addCookie(cookie);			
+			res.sendRedirect("sq");
 		
-		res.sendRedirect("sq?total="+total);
+		/////Sessions
+			//HttpSession session = req.getSession();
+			//session.setAttribute("total", total);
+			//res.sendRedirect("sq");
 		
 		
+		/////URL Rewriting
+			//res.sendRedirect("sq?total="+total);
 		
-		//Request Dispatcher technique
-		
-//		req.setAttribute("total", total);
-//		
-//		RequestDispatcher rd = req.getRequestDispatcher("sq");
-//		rd.forward(req, res);
-		
-//		pw.println("Total is :"+ total);
+		//////Request Dispatcher technique					
+			//req.setAttribute("total", total);				
+			//RequestDispatcher rd = req.getRequestDispatcher("sq");
+			//rd.forward(req, res);					
+			//pw.println("Total is :"+ total);
 
 	}
 
