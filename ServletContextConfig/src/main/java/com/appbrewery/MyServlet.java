@@ -17,7 +17,7 @@ public class MyServlet extends HttpServlet {
 		
 		PrintWriter pr = resp.getWriter();
 		
-		////ServletContext is available for all servlets
+		////ServletContext is available for all servlets 
 		ServletContext ctx = getServletContext();
 		String packagename = ctx.getInitParameter("packagename");
 		
