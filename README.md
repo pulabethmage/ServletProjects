@@ -1,2 +1,2 @@
 # ServletProjects
- Servlet, JSP, TOMCAT
+ Servlet, JSP, Sessions, Filters, MySql, RDBMS, TOMCAT
